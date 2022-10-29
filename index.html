@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/styles.css">
+    <title>Santech Finance</title>
+
+    <!-- CSS Import -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/dropdown.css">
+
+    <!-- Library Imports -->
+    <script src="js/lib/jquery.js"></script>
+    
+    <!-- Functionality Imports -->
+    <script src="js/santech.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/events.js"></script>
+    <script src="js/controller/controller.js"></script>
+    <script src="js/model/selection.js"></script>
+    <script src="js/model/model.js"></script>
+
+    <!-- Data Imports -->
+    <script src="data/netWorth/netWorth-fake.js"></script>
+    <script src="data/netWorth/netWorth-harness.js"></script>
+    <script src="data/savingsGoals/savingsGoals-fake.js"></script>
+    <script src="data/savingsGoals/savingsGoals-harness.js"></script>
+    <script src="data/transactions/transactions-fake.js"></script>
+    <script src="data/transactions/transactions-harness.js"></script>
+    <script src="data/harness.js"></script>
+
+    <!-- Views Imports -->
+    <script src="js/views/average.js"></script>
+    <script src="js/views/center.js"></script>
+    <script src="js/views/netWorth.js"></script>
+    <script src="js/views/savings.js"></script>
+    <script src="js/views/spending.js"></script>
+
+</head>
+<body class="background">
+    <header>
+        <div id="title-section">
+            <div id="logo">
+                <img src="./images/logo.svg" class="logo" alt="">
+            </div>
+            <span id="title">Santech Finance</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Worksheets</a></li>
+                <li><a href="#">Trends</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="perimeter-boxes">
+            <section id="top-left" class="top left">
+                <div class="horizontal">
+                    <div class="dropdown">
+                        <select name="" id="top-left-select">
+                            <option value="week">Week</option>
+                            <option value="month" selected="selected">Month</option>
+                            <option value="year">Year</option>
+                        </select>
+                        <span class="dropdown-arrow"></span>
+                    </div>
+                    <div class="highlight-box">
+                        <h2 class="highlight-title">Total</h2>
+                        <div class="highlight-value"></div>
+                    </div>
+                </div>
+                <div class="vertical"></div>
+            </section>
+            <section id="top-right" class="top right">
+                <div class="vertical"></div>
+                <div class="horizontal">
+                    <div class="highlight-box">
+                        <h2 class="highlight-title">Per Month</h2>
+                        <div class="highlight-value"></div>
+                    </div>
+                    <div class="dropdown">
+                        <select name="" id="top-right-select">
+                            <option value="month" selected="selected">All Time</option>
+                            <option value="ytd">YTD</option>
+                            <option value="year">Past Year</option>
+                            <option value="select">Select Year</option>
+                        </select>
+                        <span class="dropdown-arrow"></span>
+                    </div>
+                </div>
+        
+            </section>
+            <section id="bottom-left" class="bottom left">
+                <div class="horizontal">
+                    <div class="dropdown">
+                        <select name="" id="bottom-left-select">
+                            <option value="week">Week</option>
+                            <option value="month" selected="selected">Month</option>
+                            <option value="year">Year</option>
+                        </select>
+                        <span class="dropdown-arrow"></span>
+                    </div>
+                    <div class="highlight-box">
+                        <h2 class="highlight-title">Total</h2>
+                        <div class="highlight-value"></div>
+                    </div>
+                </div>
+                <div class="vertical"></div>
+            </section>
+            <section id="bottom-right" class="bottom right">
+                <div class="horizontal">
+                    <div class="highlight-box">
+                        <h2 class="highlight-title">Reached</h2>
+                        <div class="highlight-value"></div>
+                    </div>
+                </div>
+                <div class="vertical"></div>
+            </section>
+        </div>
+        <section id="plot-div" class="center"></section>
+    </main>
+    <script>
+        $(document).ready(() => Santech.init(config, 'main'))
+    </script>
+</body>
+</html>

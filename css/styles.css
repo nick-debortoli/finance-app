@@ -1,0 +1,270 @@
+/* -- Universal Styles -- */
+:root {
+    --eggshell: #F4F1DE;
+    --terra-cotta: #E07A5F;
+    --black-olive: #403D39;
+    --green-sheen: #81B29A;
+    --independence: #3D405B;
+}
+
+html, body{
+    font-family: sans-serif;
+    height: 100%;
+    min-height: 100% !important;
+    width: 100%;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-items: space-evenly;
+    width: 100%;
+    background-color: var(--black-olive);
+    overflow: hidden;
+}
+
+.background {
+    /* aspect-ratio: 900/600;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-image: url(../images/blurry-gradient-haikei.svg); */
+    background-color: var(--black-olive);
+}
+
+a {
+    text-decoration: none;
+}
+
+/* -- Header Styles -- */
+header {
+    height: 10%;
+    overflow: hidden;
+    width: 99%;
+    background-color: var(--eggshell);
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#title-section{
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+#logo {
+    height: 100%;
+    float: left;
+}
+
+#logo img {
+    height: 100%;
+}
+
+#title {    
+   font-size: 4vh;
+   color: var(--terra-cotta);
+   letter-spacing: 0.75px;
+   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.logo {
+    filter: invert(79%) sepia(4%) saturate(2147%) hue-rotate(99deg) brightness(82%) contrast(99%)
+}
+
+nav {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+ nav li {
+    display: inline;
+    margin: 0 10px;
+    font-size: 2.25vh;
+    font-family: 'Helvetica Light', sans-serif;
+    border-bottom: 1px solid var(--black-olive);
+ }
+
+ nav a {
+    color: var(--black-olive);
+ }
+/* -- Main Body -- */
+main {
+    height: 87.5%;
+    position: relative;
+}
+ /* -- Perimeter Body Boxes -- */
+ .perimeter-boxes{
+    width: 99%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-around;
+    margin-top: 5px;
+ }
+
+ #top-left, #top-right, #bottom-left, #bottom-right{
+    position: relative;
+    height: 48.75%;
+    width: 49.6%;
+ }
+
+ .horizontal, .vertical {
+    background-color: var(--eggshell);
+ }
+
+ .horizontal {
+    width: 51%;
+    height: 50%;
+ }
+
+ .vertical {
+    height: 100%;
+    width: 50%;
+ }
+
+ .right .vertical {
+    position: absolute;
+    right: 0%;
+    top: 0%;
+ }
+
+ .bottom .horizontal {
+    position: absolute;
+    bottom: 0;
+ }
+
+ .left .horizontal {
+    float: right;
+    right: 0%;
+ }
+
+ .highlight-box {
+    height: 55%;
+    width: 40%;
+    border: 2px solid var(--green-sheen);
+    color: var(--black-olive);
+    display: inline-block;
+    text-align: center;
+ }
+
+ .left .highlight-box {
+    position: relative;
+    top: 25%;
+    left: 15%;
+ }
+ 
+ .dropdown {
+   position: relative;
+   top: 40%;
+ }
+
+ .right .dropdown {
+    left: 40%;
+ }
+
+ .right .highlight-box {
+    position: relative;
+    top: 25%;
+    left: 17.5%;
+ }
+
+ .highlight-title {
+   margin: auto;
+   margin-top: 10px;
+   font-size: 28px;
+   display: inline-block;
+   border-bottom: 1px solid var(--black-olive);
+ }
+
+ .highlight-value {
+   height: 65%;
+   width: 100%;
+ }
+
+
+ /* -- Center Section -- */
+ .center {
+    position: absolute;
+    box-sizing: border-box;
+    top: 26.75%;
+    left: 25.25%;
+    width: 48.5%;
+    height: 47.7%;
+    background-color: var(--green-sheen);
+ }
+
+ /* -- Resposiveness Code -- */
+
+
+@media only screen and (max-width: 768px) {
+    #bottom-left, #bottom-right {
+        display: none;
+    }
+
+    .vertical, .highlight-box {
+        display: none;
+    }
+
+    header    {
+        align-self: auto;
+        width: 98%;
+      }
+    
+      .perimeter-boxes {
+        align-content: flex-start;
+        margin-top: 8px;
+        width: 98%;
+      }
+
+      .horizontal {
+        width: 100%;
+        height: 100%;
+      }
+
+      .center {
+        width: 98%;
+        height: 50%;
+        top: 50.6%;
+        left: 0;
+      }
+
+}
+
+@media only screen and (max-width: 600px) {
+  #bottom-left, #bottom-right, #top-right  {
+    display: none;
+  }
+
+  header    {
+    align-self: auto;
+    width: 97%;
+  }
+
+  .perimeter-boxes {
+    align-content: flex-start;
+    margin-top: 8px;
+    width: 196%;
+  }
+
+  .vertical, .highlight-box {
+    display: none;
+  }
+
+  .left .horizontal {
+    float: left;
+    width: 100%;
+    height: 98%;
+  }
+
+  .center {
+    width: 97%;
+    height: 50.5%;
+    top: 50%;
+    left: 0;
+  }
+
+}
